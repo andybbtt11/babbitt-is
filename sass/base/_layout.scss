@@ -1,0 +1,176 @@
+body,html{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #444;
+	background: url('http://www.babbitt.is/blogging/public/img/bg.jpg') 0 0 repeat;
+}
+
+body{
+}
+
+a,
+button{
+	color: #444;
+	text-decoration: none;
+	border-bottom: 1px dotted #444;
+	line-height: 1.4;
+	font-weight: bold;
+	outline: none;
+}
+
+h1,h2,h3{
+	font-weight:600;
+}
+
+h1{
+	font-size: 3em;
+	font-weight: 800;
+}
+
+h2{
+	font-size: 24px;
+}
+
+h3{
+	font-size: 16px;
+	line-height: 1.4;
+	font-style: italic;
+	color: #bbb;
+}
+
+div, ul, li, h1, h2, h3, p{
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.hidden{
+	display: none !important;
+}
+
+header{
+	.logo{
+		overflow: hidden;
+	}
+}
+
+.app{
+	width:100%;
+
+	.container{
+		max-width: 640px;
+		margin: 0 auto;
+		position: relative;
+	}
+}
+
+#load-more{
+	height: 30px;
+	margin: 20px auto;
+	line-height: 2;
+	display: block;
+	color: white;
+	background-color: #444;
+	text-align: center;
+	width: 200px;
+	outline: none;
+	border: 0;
+}
+
+.post-item-container{
+	min-height: 100px;
+
+	.post-item{
+		padding: 30px 10px;
+		clear: both;
+		display: block;
+		overflow: auto;
+		position: relative;
+		border-bottom: 1px solid #dcdcdc;
+		cursor: pointer;
+		&:hover{
+			background-color: #eee;
+		}
+	}
+
+	.date{
+		position: absolute;
+		font-size: .75em;
+		margin-top: 40px;
+		margin-left: 5px;
+		width: 90px;
+		text-align: center;
+		color: white;
+		display: block;
+		background-color: rgba(0,0,0,.8);
+		padding: 5px 0;
+		transition: opacity .2s;
+		opacity: 0;
+	}
+	.img{
+		display: block;
+		float: left;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px; 
+		overflow: hidden;
+		img{
+			transition: all .2s;
+			overflow: hidden;
+		}
+	}
+	&:hover .img img{
+		margin-left: -100px;
+		transition: all .2s;
+	}
+	&:hover .img .date{
+		opacity:1;
+		transition:opacity .5s;
+	}
+
+	.post-content{
+		float:left;
+		margin-left:20px;
+		cursor:pointer;
+		max-width:500px;
+	}
+}
+
+.post{
+	max-width:640px;
+}
+.post h1{
+	margin:20px 0;
+}
+.post img{
+	margin-bottom:10px;
+}
+
+@media screen and (max-width:600px){
+	.app{
+		padding-top: 50px;
+	}
+
+	.post-item{
+		.img{
+			display: none;
+		}
+	}
+
+	.post{
+		padding:20px 10px 0px 10px;
+	}
+	.post{
+
+	}
+	.post img{
+		max-width:100%;
+	}
+}

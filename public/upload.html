@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html class="no-js">
+
+  <head>
+    <title>Simple Forum</title>
+    <meta charset="utf-8" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/css/compiled.css">
+    <script src="public/js/lib/modernizr.js"></script> 
+  </head>
+
+  <body>
+    <header class="header" data-require="header-component"></header>
+
+    <div class="app">
+      <div class="container">
+        <form class="upload-form" data-require="upload-component" method='POST' action="/">
+          <fieldset>
+
+            <label for="id">ID</label><br/>
+            <input type="text" id="id" name="id" readonly=""></input><br/>
+            <a href="#" id="editid">edit ID</a><br/><br/>
+
+            <label for="category">Category</label><br/>
+            <input type="text" name="category"></input><br/>
+
+            <label for="title">Title</label><br/>
+            <input type="text" name="title"></input><br/>
+
+            <label for="subtitle">Subtitle</label><br/>
+            <input type="text" name="subtitle"></input><br/>
+
+            <label for="date">Date</label><br/>
+            <input type="text" name="date"></input><br/>
+
+            <label for="mainimg">Main Image URL</label><br/>
+            <input type="text" name="mainimg"></input><br/>
+
+            <label for="subimg">Secondary Image URL</label><br/>
+            <input type="text" name="subimg"></input><br/>
+
+            <label for="preview">Preview Content</label><br/>
+            <input type="text" name="preview"></input><br/>
+
+            <label for="cta">Call to Action</label><br/>
+            <input type="text" name="cta"></input><br/>
+
+            <label for="bodycopy">Body Content</label><br/>
+            <textarea rows="4" cols="50" name="bodycopy"></textarea><br/>
+
+            <button>Upload</button>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <script data-main="public/js/bootstrap" src="public/js/compiled.js"></script> 
+  </body>
+
+</html>

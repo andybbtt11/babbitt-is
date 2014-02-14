@@ -1,0 +1,33 @@
+{
+  "name": "babbitt-blog",
+  "version": "0.0.0",
+  "description": "Test",
+  "main": "app.js",
+  "dependencies": {
+    "compass": "~0.1.0",
+    "ejs": "~0.8.4",
+    "Comments": "~0.5.1",
+    "ejs-locals": "~1.0.2",
+    "express": "~3.3.8",
+    "grunt-banner": "~0.1.4",
+    "grunt-contrib-compass": "~0.3.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.5",
+    "grunt-contrib-nodeunit": "~0.2.2",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-uglify": "~0.2.5",
+    "grunt-requirejs": "~0.4.0",
+    "mongojs": "~0.7.17",
+    "logfmt": "~0.21.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andybbtt11/specialproject"
+  },
+  "author": "Babbitt",
+  "license": "BSD"
+}
