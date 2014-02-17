@@ -43,11 +43,17 @@ define( function( require ) {
             var idValue = this.collection.length;
             var updatedValue = idValue + 1;
             this.$('#id').val(updatedValue);
-            console.log(this.$('#id').val());
         },
 
         gatherData: function(){
             var data = Backbone.Syphon.serialize(this);
+
+            // Remove input if empty to preserve default model value
+            $('input').each( function(){
+                if( $(this).val() == "" ){
+                    $(this).remove();
+                }
+            });
 
             data.id = parseInt(data.id);
 

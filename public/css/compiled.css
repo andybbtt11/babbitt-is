@@ -224,6 +224,23 @@ header .logo {
   margin-bottom: 10px;
 }
 
+footer {
+  margin-top: 80px;
+  min-height: 200px;
+}
+footer .container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+footer a {
+  float: right;
+}
+footer a.github {
+  margin-top: 46px;
+  text-decoration: none;
+  border: none;
+}
+
 @media screen and (max-width: 600px) {
   .app {
     padding-top: 50px;
@@ -237,8 +254,27 @@ header .logo {
     padding: 20px 10px 0px 10px;
   }
 
+  .post h1 {
+    font-size: 2em;
+  }
   .post img {
     max-width: 100%;
+  }
+
+  footer {
+    margin-top: 80px;
+    min-height: 200px;
+  }
+  footer .container {
+    max-width: 640px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+  footer a {
+    float: left;
+  }
+  footer a.github {
+    display: none;
   }
 }
 header {

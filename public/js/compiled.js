@@ -13604,8 +13604,15 @@ define( 'main',['require','jquery','app','templateLoader'],function( require ) {
 
 	$( function() {
 		console.log('main.js');
-		tpl.loadTemplates(['section-item','post','header','filter', 'load-more'], function () {
-			app.initialize();
+		tpl.loadTemplates([
+			'section-item',
+			'post',
+			'header', 
+			'footer', 
+			'filter', 
+			'load-more'], 
+			function () {
+				app.initialize();
 		});
 	});
 });
@@ -13745,15 +13752,19 @@ define( 'header-view',['require','jquery','underscore','backbone'],function( req
 
         el: 'header',
 
+        footerEl: $('footer'),
+
         events: {
         },
 
         initialize: function() {
             this.template = _.template(tpl.get('header'));
+            this.footer = _.template(tpl.get('footer'));
         },
 
         render: function() { 
             this.$el.append( this.template );
+            this.footerEl.append( this.footer );
         }
 
     });
@@ -13788,9 +13799,9 @@ define( 'section-model',['require','backbone'],function( require ) {
 				'category' : 'Gaming',
 				'title' : 'No Title Entered',
 				'subtitle' : '',
-				'date' : null,
-				'mainimg' : null,
-				'subimg' : null,
+				'date' : 'Mon XX',
+				'mainimg' : 'http://placehold.it/640x300',
+				'subimg' : 'http://placehold.it/200x200',
 				'preview' : '',
 				'cta' : '',
 				'bodycopy' : '',
@@ -13896,19 +13907,25 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
             this.collection.fetch({
                 success: function(){
-                    //that.collection.sort();
-                    _.delay( function() { that.appendItems(); },150);
-                    console.dir(that.collection.models);
+                    if(that.collection.models.length == 0){
+                        that.appendUpload();
+                    } else {
+                        that.appendItems()
+                    }
                 }   
             });
 
             return this;
         },
 
+        appendUpload: function(){
+            this.$el.append('<br/><br/><h2>No Content</h2><li>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
+        },
+
         appendItems: function(){
             var that = this;
             var amount = this.collection.models.length;
-
+            console.log(amount);
             _.each( this.collection.models, function( model ){
                 var sectionView = new SectionView({ model: model });
                 that.$el.append( sectionView.render() );
@@ -13966,9 +13983,9 @@ define( 'post-model',['require','backbone'],function( require ) {
 				'category' : 'Gaming',
 				'title' : 'No Title Entered',
 				'subtitle' : '',
-				'date' : null,
-				'mainimg' : null,
-				'subimg' : null,
+				'date' : 'Mon XX',
+				'mainimg' : 'http://placehold.it/640x300',
+				'subimg' : 'http://placehold.it/200x100',
 				'preview' : '',
 				'cta' : '',
 				'bodycopy' : '',
@@ -14141,11 +14158,17 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
             var idValue = this.collection.length;
             var updatedValue = idValue + 1;
             this.$('#id').val(updatedValue);
-            console.log(this.$('#id').val());
         },
 
         gatherData: function(){
             var data = Backbone.Syphon.serialize(this);
+
+            // Remove input if empty to preserve default model value
+            $('input').each( function(){
+                if( $(this).val() == "" ){
+                    $(this).remove();
+                }
+            });
 
             data.id = parseInt(data.id);
 

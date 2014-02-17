@@ -10,15 +10,19 @@ define( function( require ) {
 
         el: 'header',
 
+        footerEl: $('footer'),
+
         events: {
         },
 
         initialize: function() {
             this.template = _.template(tpl.get('header'));
+            this.footer = _.template(tpl.get('footer'));
         },
 
         render: function() { 
             this.$el.append( this.template );
+            this.footerEl.append( this.footer );
         }
 
     });

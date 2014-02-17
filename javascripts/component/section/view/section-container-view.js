@@ -32,19 +32,25 @@ define( function( require ) {
 
             this.collection.fetch({
                 success: function(){
-                    //that.collection.sort();
-                    _.delay( function() { that.appendItems(); },150);
-                    console.dir(that.collection.models);
+                    if(that.collection.models.length == 0){
+                        that.appendUpload();
+                    } else {
+                        that.appendItems()
+                    }
                 }   
             });
 
             return this;
         },
 
+        appendUpload: function(){
+            this.$el.append('<br/><br/><h2>No Content</h2><li>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
+        },
+
         appendItems: function(){
             var that = this;
             var amount = this.collection.models.length;
-
+            console.log(amount);
             _.each( this.collection.models, function( model ){
                 var sectionView = new SectionView({ model: model });
                 that.$el.append( sectionView.render() );

@@ -11,8 +11,15 @@ define( function( require ) {
 
 	$( function() {
 		console.log('main.js');
-		tpl.loadTemplates(['section-item','post','header','filter', 'load-more'], function () {
-			app.initialize();
+		tpl.loadTemplates([
+			'section-item',
+			'post',
+			'header', 
+			'footer', 
+			'filter', 
+			'load-more'], 
+			function () {
+				app.initialize();
 		});
 	});
 });

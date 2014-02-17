@@ -153,6 +153,23 @@ header{
 	margin-bottom:10px;
 }
 
+footer{
+	margin-top:80px;
+	min-height:200px;
+	.container{
+		max-width: 640px;
+		margin: 0 auto;
+	}
+	a{
+		float: right;
+		&.github{
+			margin-top: 46px;
+			text-decoration: none;
+			border: none;
+		}
+	}
+}
+
 @media screen and (max-width:600px){
 	.app{
 		padding-top: 50px;
@@ -168,9 +185,27 @@ header{
 		padding:20px 10px 0px 10px;
 	}
 	.post{
-
+		h1{
+			font-size: 2em;
+		}
+		img{
+			max-width:100%;
+		}
 	}
-	.post img{
-		max-width:100%;
+
+	footer{
+		margin-top:80px;
+		min-height:200px;
+		.container{
+			max-width: 640px;
+			padding: 0 10px;
+			margin: 0 auto;
+		}
+		a{
+			float: left;
+			&.github{
+				display: none;
+			}
+		}
 	}
 }
