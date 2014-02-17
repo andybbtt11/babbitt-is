@@ -13913,6 +13913,8 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
             this.collection.fetch({
                 success: function(){
+                    $('.loader').addClass('hidden');
+
                     if(that.collection.models.length == 0){
                         that.appendUpload();
                     } else {
@@ -13947,12 +13949,15 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
             event.preventDefault();
             var that = this;
             var sortBy = $(event.target).data('category');
+
             $('.sort').removeClass('active');
             $(event.target).addClass('active');
 
             this.listAll = '/api/' + sortBy;
 
-            $('.list li').slice(7).remove();
+            $('loader').removeClass('hidden');
+
+            $('.list li').slice(6).remove();
 
             this.render();
         },

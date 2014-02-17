@@ -156,6 +156,11 @@ header .logo {
   border: 0;
 }
 
+.loader {
+  position: absolute;
+  top: 100px;
+}
+
 .post-item-container {
   min-height: 100px;
 }
@@ -225,15 +230,55 @@ header .logo {
 }
 
 .sort-by {
-  margin-left: 10px;
+  margin: 0 auto;
 }
-.sort-by .sort {
-  color: #bbb;
-  margin-right: 10px;
+.sort-by li {
+  margin: 0;
+  padding: 0;
   float: left;
+  display: block;
 }
-.sort-by .sort.active {
-  color: #444;
+.sort-by li a {
+  margin-right: 10px;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-color: #444;
+  overflow: hidden;
+  border: none;
+}
+.sort-by li a.all {
+  background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.sort-by li a.tech {
+  background: url("http://www.babbitt.is/images/blogging/img/icon-tech.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.sort-by li a.gaming {
+  background: url("http://www.babbitt.is/images/blogging/img/icon-gaming.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.sort-by li a.music {
+  background: url("http://www.babbitt.is/images/blogging/img/icon-music.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.sort-by li a.general {
+  background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.sort-by li a:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+.sort-by li a.active {
+  background-color: #444;
 }
 
 footer {
@@ -255,7 +300,13 @@ footer a.github {
 
 @media screen and (max-width: 600px) {
   .app {
-    padding-top: 50px;
+    padding-top: 101px;
+    position: relative;
+    overflow: auto;
+  }
+
+  .post-item-container .post-content {
+    margin-left: 0;
   }
 
   .post-item .img {
@@ -287,6 +338,34 @@ footer a.github {
   }
   footer a.github {
     display: none;
+  }
+
+  .sort-by {
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    margin-top: -40px;
+    float: left;
+  }
+  .sort-by li {
+    margin: 0;
+    width: 20%;
+    padding: 0;
+    position: relative;
+    float: left;
+  }
+  .sort-by li a {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background-color: #444 !important;
+  }
+  .sort-by li a:hover, .sort-by li a.active {
+    background-color: #999 !important;
   }
 }
 header {
