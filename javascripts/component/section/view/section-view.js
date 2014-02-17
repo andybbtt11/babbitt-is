@@ -23,6 +23,7 @@ define( function( require ) {
 
         render: function() { 
             this.$el.html( this.template( this.model.toJSON() ));
+            this.$el.addClass(this.model.attributes.category);
             return this.el
         },
 

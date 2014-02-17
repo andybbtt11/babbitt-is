@@ -13861,6 +13861,7 @@ define( 'section-view',['require','jquery','underscore','backbone'],function( re
 
         render: function() { 
             this.$el.html( this.template( this.model.toJSON() ));
+            this.$el.addClass(this.model.attributes.category);
             return this.el
         },
 
@@ -13886,6 +13887,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
     var view = Backbone.View.extend({
 
         events: {
+            'click .sort' : 'sortByCategory'
         },
 
         el: $( '.list' ),
@@ -13894,16 +13896,20 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
         pageSize: 10,
 
+        listAll: null,
+
         initialize: function() {
             var that = this;
 
-            this.collection = new SectionCollection([], { url: '/api?pageSize=10&page='+this.page });
-            this.loadMoreBtn = _.template(tpl.get('load-more'));
+            this.listAll = '/api';
             
         },
 
         render: function() {
             var that = this;
+
+            this.collection = new SectionCollection([], { url: this.listAll + '?pageSize=10&page='+this.page });
+            this.loadMoreBtn = _.template(tpl.get('load-more'));
 
             this.collection.fetch({
                 success: function(){
@@ -13919,7 +13925,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
         },
 
         appendUpload: function(){
-            this.$el.append('<br/><br/><h2>No Content</h2><li>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
+            this.$el.append('<li><br/><br/><br/><br/><h2>No Content</h2><br/><br/>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
         },
 
         appendItems: function(){
@@ -13935,6 +13941,20 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
                 this.loadMore();   
             }
             
+        },
+
+        sortByCategory: function(event){
+            event.preventDefault();
+            var that = this;
+            var sortBy = $(event.target).data('category');
+            $('.sort').removeClass('active');
+            $(event.target).addClass('active');
+
+            this.listAll = '/api/' + sortBy;
+
+            $('.list li').slice(7).remove();
+
+            this.render();
         },
 
         loadMore: function(){

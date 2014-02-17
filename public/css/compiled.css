@@ -224,6 +224,18 @@ header .logo {
   margin-bottom: 10px;
 }
 
+.sort-by {
+  margin-left: 10px;
+}
+.sort-by .sort {
+  color: #bbb;
+  margin-right: 10px;
+  float: left;
+}
+.sort-by .sort.active {
+  color: #444;
+}
+
 footer {
   margin-top: 80px;
   min-height: 200px;

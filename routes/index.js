@@ -38,3 +38,51 @@ exports.posts.get = function(req, res){
  });
 
 };
+
+// GET gaming posts
+exports.posts.gaming = function(req, res){
+ var pageSize = req.query.pageSize,
+   	 page = req.query.page;
+ 
+ db.posts.find( {category:'gaming'}, null, {skip: pageSize * page, limit: pageSize, sort:{id:-1} }, function(err,post){
+   if(err) return;
+   res.json(post);
+ });
+
+};
+
+// GET tech posts
+exports.posts.tech = function(req, res){
+ var pageSize = req.query.pageSize,
+   	 page = req.query.page;
+ 
+ db.posts.find( {category:'tech'}, null, {skip: pageSize * page, limit: pageSize, sort:{id:-1} }, function(err,post){
+   if(err) return;
+   res.json(post);
+ });
+
+};
+
+// GET gaming posts
+exports.posts.music = function(req, res){
+ var pageSize = req.query.pageSize,
+   	 page = req.query.page;
+ 
+ db.posts.find( {category:'music'}, null, {skip: pageSize * page, limit: pageSize, sort:{id:-1} }, function(err,post){
+   if(err) return;
+   res.json(post);
+ });
+
+};
+
+// GET gaming posts
+exports.posts.general = function(req, res){
+ var pageSize = req.query.pageSize,
+   	 page = req.query.page;
+ 
+ db.posts.find( {category:'general'}, null, {skip: pageSize * page, limit: pageSize, sort:{id:-1} }, function(err,post){
+   if(err) return;
+   res.json(post);
+ });
+
+};

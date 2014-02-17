@@ -11,6 +11,7 @@ define( function( require ) {
     var view = Backbone.View.extend({
 
         events: {
+            'click .sort' : 'sortByCategory'
         },
 
         el: $( '.list' ),
@@ -19,16 +20,20 @@ define( function( require ) {
 
         pageSize: 10,
 
+        listAll: null,
+
         initialize: function() {
             var that = this;
 
-            this.collection = new SectionCollection([], { url: '/api?pageSize=10&page='+this.page });
-            this.loadMoreBtn = _.template(tpl.get('load-more'));
+            this.listAll = '/api';
             
         },
 
         render: function() {
             var that = this;
+
+            this.collection = new SectionCollection([], { url: this.listAll + '?pageSize=10&page='+this.page });
+            this.loadMoreBtn = _.template(tpl.get('load-more'));
 
             this.collection.fetch({
                 success: function(){
@@ -44,7 +49,7 @@ define( function( require ) {
         },
 
         appendUpload: function(){
-            this.$el.append('<br/><br/><h2>No Content</h2><li>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
+            this.$el.append('<li><br/><br/><br/><br/><h2>No Content</h2><br/><br/>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
         },
 
         appendItems: function(){
@@ -60,6 +65,20 @@ define( function( require ) {
                 this.loadMore();   
             }
             
+        },
+
+        sortByCategory: function(event){
+            event.preventDefault();
+            var that = this;
+            var sortBy = $(event.target).data('category');
+            $('.sort').removeClass('active');
+            $(event.target).addClass('active');
+
+            this.listAll = '/api/' + sortBy;
+
+            $('.list li').slice(7).remove();
+
+            this.render();
         },
 
         loadMore: function(){

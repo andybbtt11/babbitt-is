@@ -50,6 +50,10 @@ app.get('/upload', function(request, response) {
 // API locations
 //app.get('/api', routes.posts.all);
 app.get('/api', routes.posts.get);
+app.get('/api/gaming', routes.posts.gaming);
+app.get('/api/tech', routes.posts.tech);
+app.get('/api/music', routes.posts.music);
+app.get('/api/general', routes.posts.general);
 app.get('/api/:id', routes.posts.one);
 app.put('/api', routes.posts.create);
 
