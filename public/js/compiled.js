@@ -1,3 +1,7 @@
+/*! Blog - v0.0.1 - Built: 2014-03-14 2:55:23 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
 
 /**
  * almond 0.2.6 Copyright (c) 2011-2012, The Dojo Foundation All Rights Reserved.
@@ -13912,6 +13916,8 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
             this.collection = new SectionCollection([], { url: this.listAll + '?pageSize=10&page='+this.page });
             this.loadMoreBtn = _.template(tpl.get('load-more'));
 
+
+            $('#load-more').remove();
             this.collection.fetch({
                 success: function(){
                     $('.loader').addClass('hidden');
@@ -13943,6 +13949,8 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
             if( amount >= this.pageSize ){
                 this.loadMore();   
+            } else {
+                $('#load-more').remove();
             }
             
         },
