@@ -13610,7 +13610,8 @@ define( 'main',['require','jquery','app','templateLoader'],function( require ) {
 			'header', 
 			'footer', 
 			'filter', 
-			'load-more'], 
+			'load-more',
+			'upload-form'], 
 			function () {
 				app.initialize();
 		});
@@ -13927,6 +13928,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
         },
 
         appendUpload: function(){
+            //TODO: Make template
             this.$el.append('<li><br/><br/><br/><br/><h2>No Content</h2><br/><br/>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
         },
 
@@ -14083,6 +14085,8 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
 
             console.log(this.collection.length);
 
+            this.updateYear();
+
             // Remove older posts link if none exists
             if( this.post == 1 ){
                 $('#olderPost').css('opacity','.5').click( function(e){e.preventDefault();});
@@ -14105,6 +14109,11 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
 
             return this.el
 
+        },
+
+        updateYear: function(){
+            var d = new Date();
+            this.$('.year').html( d.getFullYear() );
         },
 
         olderPost: function(){
@@ -14160,6 +14169,7 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
 
             this.model = new Post();
             this.collection = new PostCollection();
+            this.template = _.template(tpl.get('upload-form'));
 
         },
 
@@ -14168,7 +14178,7 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
 
             this.collection.fetch({
                 success: function(){
-                    that.updateId();
+                    that.renderForm();
                 }   
             });
 
@@ -14183,6 +14193,32 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
             var idValue = this.collection.length;
             var updatedValue = idValue + 1;
             this.$('#id').val(updatedValue);
+        },
+
+        updateDate: function(){
+            var date = new Date(),
+                month = new Array(12);
+                month[0]="Jan";
+                month[1]="Feb";
+                month[2]="Mar";
+                month[3]="Apr";
+                month[4]="May";
+                month[5]="Jun";
+                month[6]="Jul";
+                month[7]="Aug";
+                month[8]="Sep";
+                month[9]="Oct";
+                month[10]="Nov";
+                month[11]="Dec";
+
+
+            this.$('#date').val(month[date.getMonth()] + " " + date.getDate());
+        },
+
+        renderForm: function(){
+            this.$el.html( this.template( this.model.toJSON() ));
+            this.updateId();
+            this.updateDate();
         },
 
         gatherData: function(){

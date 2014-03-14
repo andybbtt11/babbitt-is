@@ -51,6 +51,7 @@ define( function( require ) {
         },
 
         appendUpload: function(){
+            //TODO: Make template
             this.$el.append('<li><br/><br/><br/><br/><h2>No Content</h2><br/><br/>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
         },
 

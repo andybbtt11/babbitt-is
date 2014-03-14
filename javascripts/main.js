@@ -17,7 +17,8 @@ define( function( require ) {
 			'header', 
 			'footer', 
 			'filter', 
-			'load-more'], 
+			'load-more',
+			'upload-form'], 
 			function () {
 				app.initialize();
 		});

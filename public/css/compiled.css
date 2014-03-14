@@ -1,3 +1,15 @@
+/*! Blog - v0.0.1 - Built: 2014-03-14 2:08:00 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*! Blog - v0.0.1 - Built: 2014-03-14 1:50:04 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*! Blog - v0.0.1 - Built: 2014-03-14 1:44:29 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
 /*
 YUI 3.10.3 (build 2fb5187)
 Copyright 2013 Yahoo! Inc. All rights reserved.
@@ -220,17 +232,19 @@ header .logo {
 .post {
   max-width: 640px;
 }
-
 .post h1 {
   margin: 20px 0;
 }
-
 .post img {
+  margin-bottom: 10px;
+}
+.post p {
   margin-bottom: 10px;
 }
 
 .sort-by {
-  margin: 0 auto;
+  margin: 0 0 20px 0;
+  overflow: auto;
 }
 .sort-by li {
   margin: 0;
@@ -241,44 +255,16 @@ header .logo {
 .sort-by li a {
   margin-right: 10px;
   padding: 0;
-  width: 40px;
-  height: 40px;
   display: block;
-  background-color: #444;
-  overflow: hidden;
-  border: none;
-}
-.sort-by li a.all {
-  background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-.sort-by li a.tech {
-  background: url("http://www.babbitt.is/images/blogging/img/icon-tech.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-.sort-by li a.gaming {
-  background: url("http://www.babbitt.is/images/blogging/img/icon-gaming.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-.sort-by li a.music {
-  background: url("http://www.babbitt.is/images/blogging/img/icon-music.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
-.sort-by li a.general {
-  background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
-  background-position: 50%;
-  background-repeat: no-repeat;
+  color: #999;
+  border-bottom: 1px dotted #999;
 }
 .sort-by li a:hover {
-  background-color: #444;
   cursor: pointer;
 }
 .sort-by li a.active {
-  background-color: #444;
+  color: #444;
+  border-bottom: 1px dotted #444;
 }
 
 footer {
@@ -363,6 +349,35 @@ footer a.github {
     height: 50px;
     overflow: hidden;
     background-color: #444 !important;
+    text-indent: -999em;
+  }
+  .sort-by li a.all {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.tech {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-tech.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.gaming {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-gaming.png");
+    background-position: 50% 7px;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.gaming:hover {
+    background-position: 50% -24px;
+  }
+  .sort-by li a.music {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-music.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.general {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
   }
   .sort-by li a:hover, .sort-by li a.active {
     background-color: #999 !important;
@@ -375,7 +390,7 @@ header {
 }
 header .container {
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0;
   max-width: 640px;
   overflow: auto;
 }

@@ -150,16 +150,20 @@ header{
 
 .post{
 	max-width:640px;
-}
-.post h1{
-	margin:20px 0;
-}
-.post img{
-	margin-bottom:10px;
+	h1{
+		margin:20px 0;
+	}
+	img{
+		margin-bottom: 10px;
+	}
+	p{
+		margin-bottom: 10px;
+	}
 }
 
 .sort-by{
-	margin: 0 auto;
+	margin: 0 0 20px 0;
+	overflow: auto;
 		li{
 			margin: 0;
 			padding: 0;
@@ -168,43 +172,43 @@ header{
 			a{
 				margin-right: 10px;
 				padding: 0;
-				width: 40px;
-				height: 40px;
 				display: block;
-				background-color: #444;
-				overflow: hidden;
-				border: none;
-				&.all{
-					background: url('http://www.babbitt.is/images/blogging/img/icon-general.png');
-					background-position: 50%;
-					background-repeat: no-repeat;
-				}
-				&.tech{
-					background: url('http://www.babbitt.is/images/blogging/img/icon-tech.png');
-					background-position: 50%;
-					background-repeat: no-repeat;
-				}
-				&.gaming{
-					background: url('http://www.babbitt.is/images/blogging/img/icon-gaming.png');
-					background-position: 50%;
-					background-repeat: no-repeat;
-				}
-				&.music{
-					background: url('http://www.babbitt.is/images/blogging/img/icon-music.png');
-					background-position: 50%;
-					background-repeat: no-repeat;
-				}
-				&.general{
-					background: url('http://www.babbitt.is/images/blogging/img/icon-general.png');
-					background-position: 50%;
-					background-repeat: no-repeat;
-				}
+				color: #999;
+				border-bottom:1px dotted #999;
+				// &.all{
+				// 	background: url('http://www.babbitt.is/images/blogging/img/icon-general.png');
+				// 	background-position: 50%;
+				// 	background-repeat: no-repeat;
+				// }
+				// &.tech{
+				// 	background: url('http://www.babbitt.is/images/blogging/img/icon-tech.png');
+				// 	background-position: 50%;
+				// 	background-repeat: no-repeat;
+				// }
+				// &.gaming{
+				// 	background: url('http://www.babbitt.is/images/blogging/img/icon-gaming.png');
+				// 	background-position: 50% 7px;
+				// 	background-repeat: no-repeat;
+				// 	&:hover{
+				// 		background-position: 50% -24px;
+				// 	}
+				// }
+				// &.music{
+				// 	background: url('http://www.babbitt.is/images/blogging/img/icon-music.png');
+				// 	background-position: 50%;
+				// 	background-repeat: no-repeat;
+				// }
+				// &.general{
+				// 	background: url('http://www.babbitt.is/images/blogging/img/icon-general.png');
+				// 	background-position: 50%;
+				// 	background-repeat: no-repeat;
+				// }
 				&:hover{
-					background-color: #444;
 					cursor: pointer;
 				}
 				&.active{
-					background-color: #444;
+					color: #444;
+					border-bottom:1px dotted #444;
 				}
 			}
 		}
@@ -292,6 +296,35 @@ footer{
 				height: 50px;
 				overflow: hidden;
 				background-color: #444 !important;
+				text-indent: -999em;
+				&.all{
+					background: url('http://www.babbitt.is/images/blogging/img/icon-general.png');
+					background-position: 50%;
+					background-repeat: no-repeat;
+				}
+				&.tech{
+					background: url('http://www.babbitt.is/images/blogging/img/icon-tech.png');
+					background-position: 50%;
+					background-repeat: no-repeat;
+				}
+				&.gaming{
+					background: url('http://www.babbitt.is/images/blogging/img/icon-gaming.png');
+					background-position: 50% 7px;
+					background-repeat: no-repeat;
+					&:hover{
+						background-position: 50% -24px;
+					}
+				}
+				&.music{
+					background: url('http://www.babbitt.is/images/blogging/img/icon-music.png');
+					background-position: 50%;
+					background-repeat: no-repeat;
+				}
+				&.general{
+					background: url('http://www.babbitt.is/images/blogging/img/icon-general.png');
+					background-position: 50%;
+					background-repeat: no-repeat;
+				}
 				&:hover,
 				&.active{
 					background-color: #999 !important;

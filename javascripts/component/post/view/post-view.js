@@ -35,6 +35,8 @@ define( function( require ) {
 
             console.log(this.collection.length);
 
+            this.updateYear();
+
             // Remove older posts link if none exists
             if( this.post == 1 ){
                 $('#olderPost').css('opacity','.5').click( function(e){e.preventDefault();});
@@ -57,6 +59,11 @@ define( function( require ) {
 
             return this.el
 
+        },
+
+        updateYear: function(){
+            var d = new Date();
+            this.$('.year').html( d.getFullYear() );
         },
 
         olderPost: function(){

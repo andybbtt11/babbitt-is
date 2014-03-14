@@ -20,6 +20,7 @@ define( function( require ) {
 
             this.model = new Post();
             this.collection = new PostCollection();
+            this.template = _.template(tpl.get('upload-form'));
 
         },
 
@@ -28,7 +29,7 @@ define( function( require ) {
 
             this.collection.fetch({
                 success: function(){
-                    that.updateId();
+                    that.renderForm();
                 }   
             });
 
@@ -43,6 +44,32 @@ define( function( require ) {
             var idValue = this.collection.length;
             var updatedValue = idValue + 1;
             this.$('#id').val(updatedValue);
+        },
+
+        updateDate: function(){
+            var date = new Date(),
+                month = new Array(12);
+                month[0]="Jan";
+                month[1]="Feb";
+                month[2]="Mar";
+                month[3]="Apr";
+                month[4]="May";
+                month[5]="Jun";
+                month[6]="Jul";
+                month[7]="Aug";
+                month[8]="Sep";
+                month[9]="Oct";
+                month[10]="Nov";
+                month[11]="Dec";
+
+
+            this.$('#date').val(month[date.getMonth()] + " " + date.getDate());
+        },
+
+        renderForm: function(){
+            this.$el.html( this.template( this.model.toJSON() ));
+            this.updateId();
+            this.updateDate();
         },
 
         gatherData: function(){
