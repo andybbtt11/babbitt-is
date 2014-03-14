@@ -68,6 +68,8 @@ define( function( require ) {
 
             if( amount >= this.pageSize ){
                 this.loadMore();   
+            } else {
+                $('#load-more').remove();
             }
             
         },
