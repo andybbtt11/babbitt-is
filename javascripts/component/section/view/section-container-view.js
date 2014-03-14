@@ -35,6 +35,8 @@ define( function( require ) {
             this.collection = new SectionCollection([], { url: this.listAll + '?pageSize=10&page='+this.page });
             this.loadMoreBtn = _.template(tpl.get('load-more'));
 
+
+            $('#load-more').remove();
             this.collection.fetch({
                 success: function(){
                     $('.loader').addClass('hidden');
@@ -83,8 +85,6 @@ define( function( require ) {
             $('loader').removeClass('hidden');
 
             $('.list li').slice(6).remove();
-
-            $('#load-more').remove();
 
             this.render();
         },
