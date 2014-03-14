@@ -84,6 +84,8 @@ define( function( require ) {
 
             $('.list li').slice(6).remove();
 
+            $('#load-more').remove();
+
             this.render();
         },
 
