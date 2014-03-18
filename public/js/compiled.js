@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-14 2:55:23 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-18 11:32:28 AM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -13872,7 +13872,7 @@ define( 'section-view',['require','jquery','underscore','backbone'],function( re
 
         showDetail: function(event){
             var postId = this.$('.post-id').val();
-            window.location = 'post#'+postId;
+            window.location = '/blogging/post#'+postId;
         }
 
     });

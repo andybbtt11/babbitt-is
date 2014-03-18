@@ -1,0 +1,144 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size:16px;
+  color:#444;
+  background:url('../images/bg.jpg') 0 0 repeat;
+}
+
+a{
+	color:#444;
+	text-decoration:none;
+	border-bottom:1px dotted #444;
+	line-height:1.4;
+	font-weight:bold;
+}
+
+#box{
+	width:160px; 
+	height:160px; 
+	overflow:hidden; 
+	margin:120px auto 60px auto;
+	display:none;
+}
+
+#box:hover {}
+
+#image{
+	width:160px; 
+	height:160px; 
+	overflow:hidden;
+	background-color:#0AAEE2;
+	-webkit-transition: all .2s ease-in-out; 
+	transition: all .2s ease-in-out; 
+}
+
+#image:hover{
+	opacity:0.8;
+}
+
+#image:active{
+	opacity:1;
+}
+
+#password-text{
+	overflow:hidden;
+	margin-top:-20px;
+}
+
+#text {
+	color:#999;
+	overflow:hidden; 
+	margin-left:0px; 
+	margin-top:46px; 
+	position:absolute; 
+	font-family: 'Ubuntu', sans-serif; 
+	font-weight:300; 
+	display:none; 
+	cursor:default;
+	 font-size:10px;
+}
+
+#text a{
+	color:#07abe0; 
+	text-decoration:none; 
+}
+
+.icon{
+	width:36px;
+	height:37px; 
+	background-color:#cbcbcb; 
+	overflow:hidden; 
+	position: absolute; 
+	margin-top:164px;
+	border:none;
+	display:none;
+	-webkit-transition-property:background-color, margin-top;  
+	-webkit-transition-duration: .3s, .125s;  
+	-webkit-transition-timing-function: linear, ease-in;
+	transition-property:background-color, margin-top;  
+	transition-duration: .3s, .125s;  
+	transition-timing-function: linear, ease-in;
+}
+
+#icon{ 
+	margin-left:0px;
+}
+
+#icon2{
+	margin-left:41px; 
+}
+
+#icon3{
+	margin-left:83px; 
+}
+
+#icon4{
+	margin-left:125px;
+}
+
+.icon:hover{
+	margin-top:167px;
+}
+
+#icon:hover{
+	background-color:#57d5ff;
+}
+
+#icon2:hover{
+	background-color:#ed568f;
+}
+
+#icon3:hover{
+	background-color:#00549E;
+}
+
+#icon4:hover{
+	background-color:#7ad946;
+}
+
+#field{
+	width:180px; 
+	height:30px; 
+	display:block;
+	float:right; 
+	margin-top:75px; 
+	display:none;
+}
+
+#field .pwcheck{
+	width:174px; 
+	height:28px; 
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:0;
+	outline:none;
+	padding-left:10px;
+}
+.page-links{
+	width:160px;
+	margin:0 auto;
+	display:none;
+}
+.thanks{
+	display:none;
+}

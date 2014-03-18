@@ -29,7 +29,7 @@ define( function( require ) {
 
         showDetail: function(event){
             var postId = this.$('.post-id').val();
-            window.location = 'post#'+postId;
+            window.location = '/blogging/post#'+postId;
         }
 
     });

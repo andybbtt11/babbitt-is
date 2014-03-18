@@ -32,19 +32,27 @@ app.configure(function() {
 
 // Load up index.html
 app.get('/', function(request, response) {
-	response.render('public/index.html');
+	response.render('public/home/index.html');
 });
 
-app.get('/post', function(request, response) {
-	response.render('public/post.html');
+app.get('/showing-off', function(request, response) {
+	response.render('public/portfolio/index.html');
 });
 
-app.get('/login', function(request, response) {
-	response.render('public/login.html');
+app.get('/blogging', function(request, response) {
+	response.render('public/blog/index.html');
 });
 
-app.get('/upload', function(request, response) {
-	response.render('public/upload.html');
+app.get('/blogging/post', function(request, response) {
+	response.render('public/blog/post.html');
+});
+
+app.get('/blogging/login', function(request, response) {
+	response.render('public/blog/login.html');
+});
+
+app.get('/blogging/upload', function(request, response) {
+	response.render('public/blog/upload.html');
 });
 
 // API locations
