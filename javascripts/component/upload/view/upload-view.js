@@ -94,7 +94,7 @@ define( function( require ) {
         },
 
         relocate: function(){
-            _.delay( function(){ window.location = "/" }, 150);
+            _.delay( function(){ window.location = "/blogging" }, 150);
         },
 
         activateIdField: function(event){

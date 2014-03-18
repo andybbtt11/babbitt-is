@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:32:28 AM CST
+/*! Blog - v0.0.1 - Built: 2014-03-18 11:55:20 AM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -14128,7 +14128,7 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
             var olderPost =  parseInt(this.post) - 1;
             console.log(olderPost);     
 
-            window.location.href = '/post#' + olderPost;
+            window.location.href = '/blogging/post#' + olderPost;
             window.location.reload();
             
         },
@@ -14136,7 +14136,7 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
         newerPost: function(){
             var newerPost =  parseInt(this.post) + 1;
             console.log(newerPost);        
-            window.location.href = '/post#' + newerPost;
+            window.location.href = '/blogging/post#' + newerPost;
             window.location.reload();
         }
 
@@ -14251,7 +14251,7 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
         },
 
         relocate: function(){
-            _.delay( function(){ window.location = "/" }, 150);
+            _.delay( function(){ window.location = "/blogging" }, 150);
         },
 
         activateIdField: function(event){

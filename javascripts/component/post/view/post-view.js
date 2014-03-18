@@ -70,7 +70,7 @@ define( function( require ) {
             var olderPost =  parseInt(this.post) - 1;
             console.log(olderPost);     
 
-            window.location.href = '/post#' + olderPost;
+            window.location.href = '/blogging/post#' + olderPost;
             window.location.reload();
             
         },
@@ -78,7 +78,7 @@ define( function( require ) {
         newerPost: function(){
             var newerPost =  parseInt(this.post) + 1;
             console.log(newerPost);        
-            window.location.href = '/post#' + newerPost;
+            window.location.href = '/blogging/post#' + newerPost;
             window.location.reload();
         }
 
