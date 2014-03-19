@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:55:20 AM CST
+/*! Blog - v0.0.1 - Built: 2014-03-19 4:51:40 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -13935,7 +13935,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
         appendUpload: function(){
             //TODO: Make template
-            this.$el.append('<li><br/><br/><br/><br/><h2>No Content</h2><br/><br/>The list is empty, if you are the site admin, use the <a href="/upload">Upload</a> form to add content</li>');
+            this.$el.append('<li><br/><br/><h2>I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</li>');
         },
 
         appendItems: function(){
