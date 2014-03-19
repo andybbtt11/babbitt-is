@@ -128,7 +128,7 @@ h3{
 } 
 
 .resume{
-	background-image:url(../images/ui/resume-icon.png); 
+	background-image:url(http://images.babbitt.is/ui/resume-icon.png); 
 	-webkit-transition:opacity .16s linear;
 }
 
@@ -143,7 +143,7 @@ h3{
 }
 
 .social{
-	background-image:url(../images/ui/social-icon.png);
+	background-image:url(http://images.babbitt.is/ui/social-icon.png);
 }
 
 .social:hover{
@@ -157,7 +157,7 @@ h3{
 }
 
 .contact{
-	background-image:url(../images/ui/contact-icon.png);
+	background-image:url(http://images.babbitt.is/images/ui/contact-icon.png);
 }
 
 .contact:hover{
@@ -205,19 +205,19 @@ h3{
 }
 
 .twitbg{
-	background:url(../images/ui/twit-sm.gif) 0 0 no-repeat;
+	background:url(http://images.babbitt.is/ui/twit-sm.gif) 0 0 no-repeat;
 }
 
 .linkedbg{
-	background:url(../images/ui/linked-sm.gif) 0 0 no-repeat;
+	background:url(http://images.babbitt.is/ui/linked-sm.gif) 0 0 no-repeat;
 }
 
 .fbbg{
-	background:url(../images/ui/fb-sm.gif) 0 0 no-repeat;
+	background:url(http://images.babbitt.is/ui/fb-sm.gif) 0 0 no-repeat;
 }
 
 .dbbg{
-	background:url(../images/ui/db-sm.gif) 0 0 no-repeat;
+	background:url(http://images.babbitt.is/ui/db-sm.gif) 0 0 no-repeat;
 }
 
 .socialnetwork{
