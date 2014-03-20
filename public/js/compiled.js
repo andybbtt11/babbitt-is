@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-19 9:19:17 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-19 9:47:02 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -13935,7 +13935,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
         appendUpload: function(){
             //TODO: Make template
-            this.$el.append('<li><br/><br/><h2>I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</h2></li>');
+            this.$el.append('<li><br/><br/><h2>test-I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</h2></li>');
         },
 
         appendItems: function(){
