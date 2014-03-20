@@ -34,9 +34,15 @@ require.config({
         'post-view' : 'component/post/view/post-view',
         'post-model' : 'component/post/model/post-model',
         'post-collection' : 'component/post/collection/post-collection',
+        'comments-component' : 'component/comments/comments-component',
+        'comments-view' : 'component/comments/view/comments-view',
+        'comments-model' : 'component/comments/model/comments-model',
+        'comments-collection' : 'component/comments/collection/comments-collection',
 
         'upload-component' : 'component/upload/upload-component',
-        'upload-view' : 'component/upload/view/upload-view'
+        'upload-view' : 'component/upload/view/upload-view',
+        'comment-upload-component' : 'component/comment-upload/comment-upload-component',
+        'comment-upload-view' : 'component/comment-upload/view/comment-upload-view'
     }
 
 });

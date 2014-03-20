@@ -14,11 +14,13 @@ define( function( require ) {
 		tpl.loadTemplates([
 			'section-item',
 			'post',
+			'comments',
 			'header', 
 			'footer', 
 			'filter', 
 			'load-more',
-			'upload-form'], 
+			'upload-form',
+			'comment-upload-form'], 
 			function () {
 				app.initialize();
 		});
