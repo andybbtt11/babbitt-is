@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-20 1:49:52 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-20 2:15:08 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -302,7 +302,7 @@ footer a.github {
 
 @media screen and (max-width: 600px) {
   .app {
-    padding-top: 101px;
+    padding-top: 61px;
     position: relative;
     overflow: auto;
   }
@@ -351,6 +351,7 @@ footer a.github {
   }
 
   .sort-by {
+    display: none;
     margin: 0;
     position: fixed;
     width: 100%;
