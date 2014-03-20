@@ -1,16 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:46:26 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:45:47 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:44:55 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:51:17 AM CST
+/*! Blog - v0.0.1 - Built: 2014-03-20 1:49:52 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -255,6 +243,20 @@ header .logo {
 .comments-container {
   margin-top: 40px;
 }
+.comments-container h3 {
+  margin-bottom: 10px;
+}
+.comments-container .comments {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.comments-container .comments li {
+  border-bottom: 1px solid #eee;
+  padding: 4px 0;
+}
+.comments-container .comment-form-fields textarea {
+  width: 640px;
+}
 
 .sort-by {
   margin: 0 0 20px 0;
@@ -342,6 +344,10 @@ footer a.github {
   }
   footer a.github {
     display: none;
+  }
+
+  .comments-container {
+    padding: 0 10px;
   }
 
   .sort-by {

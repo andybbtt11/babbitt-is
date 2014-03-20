@@ -47,21 +47,24 @@ define( function( require ) {
         },
 
         gatherData: function(){
+            
             var data = Backbone.Syphon.serialize(this);
+            var that = this;
 
             // Remove input if empty to preserve default model value
-            $('input').each( function(){
+            this.$('input').each( function(){
                 if( $(this).val() == "" ){
                     $(this).remove();
                 }
             });
 
-            this.model.set(data);
-            this.model.save();
-            console.log(this.model);
-            this.collection.add(this.model);
+            _.delay( function(){
+                that.model.set(data);
+                that.model.save();
+                that.collection.add(this.model)
+            },100);
 
-           this.relocate();
+            this.relocate();
         },
 
         toggleForm: function(e){

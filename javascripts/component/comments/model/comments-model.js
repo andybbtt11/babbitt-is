@@ -12,7 +12,7 @@ define( function( require ) {
 			return {
 				'_id' : null,
 				'postid' : null,
-				'name' : 'Anon',
+				'name' : 'Anonymous',
 				'content' : null
 			};
 		},

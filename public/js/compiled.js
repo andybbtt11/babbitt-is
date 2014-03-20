@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:46:26 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-20 1:49:52 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -14177,7 +14177,7 @@ define( 'comments-model',['require','backbone'],function( require ) {
 			return {
 				'_id' : null,
 				'postid' : null,
-				'name' : 'Anon',
+				'name' : 'Anonymous',
 				'content' : null
 			};
 		},
@@ -14436,21 +14436,24 @@ define( 'comment-upload-view',['require','jquery','underscore','backbone','comme
         },
 
         gatherData: function(){
+            
             var data = Backbone.Syphon.serialize(this);
+            var that = this;
 
             // Remove input if empty to preserve default model value
-            $('input').each( function(){
+            this.$('input').each( function(){
                 if( $(this).val() == "" ){
                     $(this).remove();
                 }
             });
 
-            this.model.set(data);
-            this.model.save();
-            console.log(this.model);
-            this.collection.add(this.model);
+            _.delay( function(){
+                that.model.set(data);
+                that.model.save();
+                that.collection.add(this.model)
+            },100);
 
-           this.relocate();
+            this.relocate();
         },
 
         toggleForm: function(e){
