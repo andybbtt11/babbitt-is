@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:51:17 AM CST
+/*! Blog - v0.0.1 - Built: 2014-03-20 12:46:26 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -13943,7 +13943,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
         appendUpload: function(){
             //TODO: Make template
-            this.$el.append('<li><br/><br/><h2>test-I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</h2></li>');
+            this.$el.append('<li><br/><br/><h2>I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</h2></li>');
         },
 
         appendItems: function(){
@@ -14360,7 +14360,7 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
             console.log(this.model);
             this.collection.add(this.model);
 
-           // this.relocate();
+            this.relocate();
         },
 
         relocate: function(){
