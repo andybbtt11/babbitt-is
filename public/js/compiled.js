@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-19 5:07:46 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-20 12:51:17 AM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -13611,11 +13611,13 @@ define( 'main',['require','jquery','app','templateLoader'],function( require ) {
 		tpl.loadTemplates([
 			'section-item',
 			'post',
+			'comments',
 			'header', 
 			'footer', 
 			'filter', 
 			'load-more',
-			'upload-form'], 
+			'upload-form',
+			'comment-upload-form'], 
 			function () {
 				app.initialize();
 		});
@@ -13657,9 +13659,15 @@ require.config({
         'post-view' : 'component/post/view/post-view',
         'post-model' : 'component/post/model/post-model',
         'post-collection' : 'component/post/collection/post-collection',
+        'comments-component' : 'component/comments/comments-component',
+        'comments-view' : 'component/comments/view/comments-view',
+        'comments-model' : 'component/comments/model/comments-model',
+        'comments-collection' : 'component/comments/collection/comments-collection',
 
         'upload-component' : 'component/upload/upload-component',
-        'upload-view' : 'component/upload/view/upload-view'
+        'upload-view' : 'component/upload/view/upload-view',
+        'comment-upload-component' : 'component/comment-upload/comment-upload-component',
+        'comment-upload-view' : 'component/comment-upload/view/comment-upload-view'
     }
 
 });
@@ -13935,7 +13943,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
         appendUpload: function(){
             //TODO: Make template
-            this.$el.append('<li><br/><br/><h2>I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</li>');
+            this.$el.append('<li><br/><br/><h2>test-I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</h2></li>');
         },
 
         appendItems: function(){
@@ -14155,6 +14163,111 @@ define( 'post-component',['require','post-view'],function( require ) {
 		//blogPostView.initialize();
 	};
 });
+define( 'comments-model',['require','backbone'],function( require ) {
+
+	
+
+	var Backbone = require( 'backbone' );
+
+	var model = Backbone.Model.extend({
+
+		urlRoot: '/comments',
+
+		defaults: function() {
+			return {
+				'_id' : null,
+				'postid' : null,
+				'name' : 'Anon',
+				'content' : null
+			};
+		},
+
+		initialize: function(){
+		}
+	});
+
+	return model;
+});
+define( 'comments-collection',['require','underscore','backbone','comments-model'],function( require ) {
+
+	
+
+	var _ = require( 'underscore' ),
+		Backbone = require( 'backbone' ),
+		Comments = require( 'comments-model' );
+
+	var collection = Backbone.Collection.extend({
+
+		model: Comments,
+
+		url:"/comments"
+		
+	});
+
+	return collection;
+});
+define( 'comments-view',['require','underscore','jquery','backbone','comments-collection','comments-view'],function( require ) {
+
+    
+
+    var _ = require( 'underscore' ),
+        $ = require( 'jquery' ),
+        Backbone = require( 'backbone' ),
+        CommentsCollection = require( 'comments-collection' ),
+        CommentsView = require( 'comments-view' );
+
+    var view = Backbone.View.extend({
+
+        events: {
+        },
+
+        postId: window.location.hash.substring(1),
+
+        el: $( '.comments' ),
+
+        tagName: 'li',
+
+        initialize: function() {
+            this.collection = new CommentsCollection();
+            this.template = this.template = _.template(tpl.get('comments'));
+            
+        },
+
+        render: function() {
+            var that = this;
+            this.collection.fetch().complete(function(){
+              that.appendComments();
+            });
+
+            return this;
+        },
+
+        appendComments: function(){
+            var that = this;
+             _.each(this.collection.models, function(item){
+              if (item.toJSON().postid == that.postId) {
+                that.$el.append( '<li>'+that.template( item.toJSON() )+'</li>');
+              }
+        });
+
+
+        }
+
+    });
+
+    return view;
+});
+define( 'comments-component',['require','comments-view'],function( require ) {
+
+	
+
+	var CommentsView = require( 'comments-view' );
+
+	return function() {
+		var commentsView = new CommentsView();
+		commentsView.render();
+	};
+});
 define( 'upload-view',['require','jquery','underscore','backbone','post-model','post-collection'],function( require ) {
 
     
@@ -14247,7 +14360,7 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
             console.log(this.model);
             this.collection.add(this.model);
 
-            this.relocate();
+           // this.relocate();
         },
 
         relocate: function(){
@@ -14272,5 +14385,95 @@ define( 'upload-component',['require','upload-view'],function( require ) {
 	return function() {
 		var uploadView = new UploadView();
 		uploadView.render();
+	};
+});
+define( 'comment-upload-view',['require','jquery','underscore','backbone','comments-model','comments-collection'],function( require ) {
+
+    
+
+    var $ = require( 'jquery' ),
+       _ = require( 'underscore' ),
+       Backbone = require( 'backbone' ),
+       Comment = require( 'comments-model' ),
+       CommentCollection = require( 'comments-collection' );
+
+    var view = Backbone.View.extend({
+
+        el: '.comment-upload-form',
+
+        events: {
+          'click .new-comment' : 'toggleForm'
+        },
+
+        initialize: function() {
+
+            this.model = new Comment();
+            this.collection = new CommentCollection();
+            this.template = _.template(tpl.get('comment-upload-form'));
+
+        },
+
+        render: function() { 
+            var that = this;
+
+            this.renderForm();
+
+            this.$el.on('submit', function(event){
+                event.preventDefault();
+                that.gatherData();
+            });
+        },
+
+        // Prepopulate ID value
+        updateId: function(){
+            this.$('#id').val(window.location.hash.substring(1));
+        },
+
+
+        renderForm: function(){
+            this.$el.append( this.template() );
+            this.updateId();
+        },
+
+        gatherData: function(){
+            var data = Backbone.Syphon.serialize(this);
+
+            // Remove input if empty to preserve default model value
+            $('input').each( function(){
+                if( $(this).val() == "" ){
+                    $(this).remove();
+                }
+            });
+
+            this.model.set(data);
+            this.model.save();
+            console.log(this.model);
+            this.collection.add(this.model);
+
+           this.relocate();
+        },
+
+        toggleForm: function(e){
+            e.preventDefault();
+            this.$('.comment-form-fields').toggleClass('hidden');
+        },
+
+        relocate: function(){
+             _.delay( function(){ location.reload() }, 150);
+        }
+
+    });
+
+    return view;
+});
+define( 'comment-upload-component',['require','comment-upload-view'],function( require ) {
+
+	
+
+	var CommentUploadView = require( 'comment-upload-view' );
+
+	return function() {
+		var commentUploadView = new CommentUploadView();
+		commentUploadView.render();
 	};
 });

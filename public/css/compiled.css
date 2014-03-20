@@ -1,76 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-19 5:07:46 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-19 5:06:04 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-19 5:04:16 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-19 4:58:21 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-19 4:51:40 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-19 4:48:07 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:55:20 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:48:53 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:32:28 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:30:00 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:26:26 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:22:06 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:17:32 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:11:14 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:09:39 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 11:08:07 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 10:54:50 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-18 10:52:56 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
-/*! Blog - v0.0.1 - Built: 2014-03-17 3:42:40 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-20 12:51:17 AM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -153,13 +81,15 @@ legend {
 }
 
 body, html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Vollkorn', serif;
   font-size: 16px;
-  color: #444;
+  color: #555;
+  background: url("http://images.babbitt.is/bg.jpg") 0 0 repeat;
 }
 
 a,
 button {
+  font-family: 'Open Sans', serif;
   color: #444;
   text-decoration: none;
   border-bottom: 1px dotted #444;
@@ -170,6 +100,8 @@ button {
 
 h1, h2, h3 {
   font-weight: 600;
+  font-family: 'Open Sans', serif;
+  color: #444;
 }
 
 h1 {
@@ -298,11 +230,18 @@ header .logo {
 .post h1 {
   margin: 20px 0;
 }
+.post h2 {
+  margin-bottom: 16px;
+}
 .post img {
   margin-bottom: 10px;
 }
 .post p {
   margin-bottom: 10px;
+}
+
+.comments-container {
+  margin-top: 40px;
 }
 
 .sort-by {
@@ -367,7 +306,11 @@ footer a.github {
   }
 
   .post h1 {
+    margin: 0px;
     font-size: 2em;
+  }
+  .post h2 {
+    margin-bottom: 16px;
   }
   .post img {
     max-width: 100%;

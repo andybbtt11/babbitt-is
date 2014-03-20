@@ -1,8 +1,8 @@
 body,html{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Vollkorn', serif;
 	font-size: 16px;
-	color: #444;
-	//background: url('http://www.babbitt.is/blogging/public/img/bg.jpg') 0 0 repeat;
+	color: #555;
+	background: url('http://images.babbitt.is/bg.jpg') 0 0 repeat;
 }
 
 body{
@@ -10,6 +10,7 @@ body{
 
 a,
 button{
+	font-family: 'Open Sans', serif;
 	color: #444;
 	text-decoration: none;
 	border-bottom: 1px dotted #444;
@@ -20,6 +21,8 @@ button{
 
 h1,h2,h3{
 	font-weight:600;
+	font-family: 'Open Sans', serif;
+	color: #444;
 }
 
 h1{
@@ -153,12 +156,19 @@ header{
 	h1{
 		margin:20px 0;
 	}
+	h2{
+		margin-bottom: 16px;
+	}
 	img{
 		margin-bottom: 10px;
 	}
 	p{
 		margin-bottom: 10px;
 	}
+}
+
+.comments-container{
+	margin-top: 40px;
 }
 
 .sort-by{
@@ -253,7 +263,11 @@ footer{
 	}
 	.post{
 		h1{
+			margin: 0px;
 			font-size: 2em;
+		}
+		h2{
+			margin-bottom: 16px;
 		}
 		img{
 			max-width:100%;
