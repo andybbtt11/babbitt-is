@@ -90,7 +90,7 @@ define( function( require ) {
             console.log(this.model);
             this.collection.add(this.model);
 
-            this.relocate();
+           // this.relocate();
         },
 
         relocate: function(){

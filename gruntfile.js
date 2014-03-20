@@ -35,7 +35,9 @@ module.exports = function(grunt) {
             'header-component',
             'section-component',
             'post-component',
-            'upload-component'
+            'comments-component',
+            'upload-component',
+            'comment-upload-component'
         ],
         out: 'public/js/compiled.js',
         name: 'bootstrap',

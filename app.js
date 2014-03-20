@@ -64,6 +64,8 @@ app.get('/api/music', routes.posts.music);
 app.get('/api/general', routes.posts.general);
 app.get('/api/:id', routes.posts.one);
 app.put('/api', routes.posts.create);
+app.get('/comments', routes.comments.all);
+app.post('/comments', routes.comments.create);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

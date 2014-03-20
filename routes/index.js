@@ -1,6 +1,7 @@
 var db = require('../config/database.js');
 
 exports.posts={};
+exports.comments={};
 
 // GET all posts
 exports.posts.all = function(req,res){
@@ -8,6 +9,14 @@ exports.posts.all = function(req,res){
 	    if(err) return;
 	    res.json(posts);
   	});
+};
+
+// GET all comments
+exports.comments.all = function(req,res){
+  db.comments.find(function(err, comments){
+      if(err) return;
+      res.json(comments);
+    });
 };
 
 // GET post by _id
@@ -25,6 +34,14 @@ exports.posts.create = function(req, res){
     res.json(data);
     console.log(data.title);
     db.posts.save(req.body);
+};
+
+// POST new comment
+exports.comments.create = function(req, res){
+    var data = req.body;
+    res.json(data);
+    console.log(data.title);
+    db.comments.save(req.body);
 };
 
 // GET numbered posts
