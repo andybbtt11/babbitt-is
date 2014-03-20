@@ -1,0 +1,492 @@
+/*! Blog - v0.0.1 - Built: 2014-03-19 9:19:17 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*! Blog - v0.0.1 - Built: 2014-03-19 9:18:27 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*! Blog - v0.0.1 - Built: 2014-03-19 9:17:53 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*! Blog - v0.0.1 - Built: 2014-03-19 9:16:06 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*! Blog - v0.0.1 - Built: 2014-03-18 4:56:45 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
+/*
+YUI 3.10.3 (build 2fb5187)
+Copyright 2013 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html {
+  color: #000;
+  background: #FFF;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+input, textarea, select {
+  *font-size: 100%;
+}
+
+legend {
+  color: #000;
+}
+
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+body, html {
+  font-family: 'Vollkorn', serif;
+  font-size: 16px;
+  color: #555;
+}
+
+a,
+button {
+  font-family: 'Open Sans', serif;
+  color: #444;
+  text-decoration: none;
+  border-bottom: 1px dotted #444;
+  line-height: 1.4;
+  font-weight: bold;
+  outline: none;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  font-family: 'Open Sans', serif;
+  color: #444;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-style: italic;
+  color: #bbb;
+}
+
+div, ul, li, h1, h2, h3, p {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hidden {
+  display: none !important;
+}
+
+header .logo {
+  overflow: hidden;
+}
+
+.app {
+  width: 100%;
+}
+.app .container {
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#load-more {
+  height: 30px;
+  margin: 20px auto;
+  line-height: 2;
+  display: block;
+  color: white;
+  background-color: #444;
+  text-align: center;
+  width: 200px;
+  outline: none;
+  border: 0;
+}
+
+.loader {
+  position: absolute;
+  top: 100px;
+}
+
+.post-item-container {
+  min-height: 100px;
+}
+.post-item-container .post-item {
+  padding: 30px 10px;
+  clear: both;
+  display: block;
+  overflow: auto;
+  position: relative;
+  border-bottom: 1px solid #dcdcdc;
+  cursor: pointer;
+}
+.post-item-container .post-item:hover {
+  background-color: #eee;
+}
+.post-item-container .date {
+  position: absolute;
+  font-size: .75em;
+  margin-top: 40px;
+  margin-left: 5px;
+  width: 90px;
+  text-align: center;
+  color: white;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px 0;
+  transition: opacity .2s;
+  opacity: 0;
+}
+.post-item-container .img {
+  display: block;
+  float: left;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.post-item-container .img img {
+  transition: all .2s;
+  overflow: hidden;
+}
+.post-item-container:hover .img img {
+  margin-left: -100px;
+  transition: all .2s;
+}
+.post-item-container:hover .img .date {
+  opacity: 1;
+  transition: opacity .5s;
+}
+.post-item-container .post-content {
+  float: left;
+  margin-left: 20px;
+  cursor: pointer;
+  max-width: 500px;
+}
+
+.post {
+  max-width: 640px;
+}
+.post h1 {
+  margin: 20px 0;
+}
+.post h2 {
+  margin-bottom: 16px;
+}
+.post img {
+  margin-bottom: 10px;
+}
+.post p {
+  margin-bottom: 10px;
+}
+
+.sort-by {
+  margin: 0 0 20px 0;
+  overflow: auto;
+}
+.sort-by li {
+  margin: 0;
+  padding: 0;
+  float: left;
+  display: block;
+}
+.sort-by li a {
+  margin-right: 10px;
+  padding: 0;
+  display: block;
+  color: #999;
+  border-bottom: 1px dotted #999;
+}
+.sort-by li a:hover {
+  cursor: pointer;
+}
+.sort-by li a.active {
+  color: #444;
+  border-bottom: 1px dotted #444;
+}
+
+footer {
+  margin-top: 80px;
+  min-height: 200px;
+}
+footer .container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+footer a {
+  float: right;
+}
+footer a.github {
+  margin-top: 46px;
+  text-decoration: none;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .app {
+    padding-top: 101px;
+    position: relative;
+    overflow: auto;
+  }
+
+  .post-item-container .post-content {
+    margin-left: 0;
+  }
+
+  .post-item .img {
+    display: none;
+  }
+
+  .post {
+    padding: 20px 10px 0px 10px;
+  }
+
+  .post h1 {
+    margin: 0px;
+    font-size: 2em;
+  }
+  .post h2 {
+    margin-bottom: 16px;
+  }
+  .post img {
+    max-width: 100%;
+  }
+
+  footer {
+    margin-top: 80px;
+    min-height: 200px;
+  }
+  footer .container {
+    max-width: 640px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+  footer a {
+    float: left;
+  }
+  footer a.github {
+    display: none;
+  }
+
+  .sort-by {
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    margin-top: -40px;
+    float: left;
+  }
+  .sort-by li {
+    margin: 0;
+    width: 20%;
+    padding: 0;
+    position: relative;
+    float: left;
+  }
+  .sort-by li a {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    background-color: #444 !important;
+    text-indent: -999em;
+  }
+  .sort-by li a.all {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.tech {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-tech.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.gaming {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-gaming.png");
+    background-position: 50% 7px;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.gaming:hover {
+    background-position: 50% -24px;
+  }
+  .sort-by li a.music {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-music.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a.general {
+    background: url("http://www.babbitt.is/images/blogging/img/icon-general.png");
+    background-position: 50%;
+    background-repeat: no-repeat;
+  }
+  .sort-by li a:hover, .sort-by li a.active {
+    background-color: #999 !important;
+  }
+}
+header {
+  width: 100%;
+  height: 120px;
+  display: block;
+}
+header .container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 640px;
+  overflow: auto;
+}
+header .logo {
+  width: 60px;
+  height: 60px;
+  margin: 30px 20px 30px 0;
+  float: left;
+  display: block;
+  background-color: #0aaee2;
+  color: #fff;
+  transition: margin linear .1s;
+}
+header a {
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+header h1 {
+  float: left;
+  margin-top: 44px;
+}
+header nav {
+  float: right;
+  margin-top: 48px;
+  transition: margin linear .1s;
+}
+header nav a {
+  margin-left: 10px;
+  float: left;
+}
+header nav a:first-child {
+  margin-left: 0;
+}
+header nav a:hover {
+  border-bottom: 2px dotted #444;
+  color: #888;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: #0aaee2;
+    height: 61px;
+    position: fixed;
+    z-index: 2;
+  }
+  header a {
+    color: white;
+  }
+  header .logo {
+    margin: 0;
+    background-color: transparent;
+  }
+  header nav {
+    margin-top: 22px;
+  }
+}
+.filter-container {
+  margin-bottom: 20px;
+}
+.filter-container ul {
+  width: 100%;
+  height: 60px;
+  display: block;
+  background-color: #444;
+  padding: 0;
+}
+.filter-container ul li {
+  width: 25%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  display: block;
+  background-color: #444;
+}
+.filter-container ul li:hover {
+  background-color: #eeeeee;
+}
