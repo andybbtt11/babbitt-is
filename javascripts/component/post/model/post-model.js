@@ -6,8 +6,6 @@ define( function( require ) {
 
 	var model = Backbone.Model.extend({
 
-		url: '/api',
-
 		defaults: function() {
 			return {
 				'_id' : null,

@@ -8,8 +8,6 @@ define( function( require ) {
 
 	var collection = Backbone.Collection.extend({
 
-		url: '/api',
-
 		model: Post,
 
 		initialize: function() {

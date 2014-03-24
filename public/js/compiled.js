@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-20 2:15:08 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-24 2:22:50 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -14017,8 +14017,6 @@ define( 'post-model',['require','backbone'],function( require ) {
 
 	var model = Backbone.Model.extend({
 
-		url: '/api',
-
 		defaults: function() {
 			return {
 				'_id' : null,
@@ -14052,8 +14050,6 @@ define( 'post-collection',['require','underscore','backbone','post-model'],funct
 
 	var collection = Backbone.Collection.extend({
 
-		url: '/api',
-
 		model: Post,
 
 		initialize: function() {
@@ -14085,7 +14081,7 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
 
         initialize: function() {
             var that = this;
-            this.collection = new PostCollection();
+            this.collection = new PostCollection([],{url:"/api/" + this.post });
             this.template = _.template(tpl.get('post'));
  
             this.collection.fetch().complete(function(){
@@ -14097,31 +14093,31 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
         render: function() { 
             var that = this;
 
-            this.$el.html( this.template( this.collection.get(this.post).toJSON() ));
+            this.$el.html( this.template( this.collection.models[0].toJSON() ));
 
             console.log(this.collection.length);
 
-            this.updateYear();
+            // this.updateYear();
 
-            // Remove older posts link if none exists
-            if( this.post == 1 ){
-                $('#olderPost').css('opacity','.5').click( function(e){e.preventDefault();});
-            } else {
-                $('#olderPost').click( function(e){
-                    e.preventDefault(); 
-                    that.olderPost();
-                });
-            }
+            // // Remove older posts link if none exists
+            // if( this.post == 1 ){
+            //     $('#olderPost').css('opacity','.5').click( function(e){e.preventDefault();});
+            // } else {
+            //     $('#olderPost').click( function(e){
+            //         e.preventDefault(); 
+            //         that.olderPost();
+            //     });
+            // }
 
-            // Remove newer posts link if none exists
-            if( this.post == this.collection.length ){
-                $('#newerPost').css('opacity','.5').click( function(e){e.preventDefault();});
-            } else {
-                $('#newerPost').click( function(e){
-                    e.preventDefault(); 
-                    that.newerPost();
-                 });
-            }
+            // // Remove newer posts link if none exists
+            // if( this.post == this.collection.length ){
+            //     $('#newerPost').css('opacity','.5').click( function(e){e.preventDefault();});
+            // } else {
+            //     $('#newerPost').click( function(e){
+            //         e.preventDefault(); 
+            //         that.newerPost();
+            //      });
+            // }
 
             return this.el
 
