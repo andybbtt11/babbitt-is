@@ -22,7 +22,7 @@ define( function( require ) {
             this.collection = new PostCollection([],{url:"/api/" + this.post });
             this.template = _.template(tpl.get('post'));
  
-            this.collection.fetch().complete(function(){
+            this.collection.fetch({cache:true}).complete(function(){
                 that.render();
             });
 

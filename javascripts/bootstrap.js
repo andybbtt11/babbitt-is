@@ -11,6 +11,7 @@ require.config({
         'jquery':       'lib/jquery',
         'backbone':     'lib/backbone',
         'backboneSyphon': 'lib/backbone.syphon',
+        'backboneCache':     'lib/backbone.cache',
         'templateLoader': 'lib/templateLoader',
 
         // App

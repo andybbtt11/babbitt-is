@@ -38,6 +38,7 @@ define( function( require ) {
 
             $('#load-more').remove();
             this.collection.fetch({
+                cache: true,
                 success: function(){
                     $('.loader').addClass('hidden');
 

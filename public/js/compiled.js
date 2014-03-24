@@ -1,4 +1,4 @@
-/*! Blog - v0.0.1 - Built: 2014-03-24 2:22:50 PM CST
+/*! Blog - v0.0.1 - Built: 2014-03-24 2:29:31 PM CST
 *   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
 */
 
@@ -13636,6 +13636,7 @@ require.config({
         'jquery':       'lib/jquery',
         'backbone':     'lib/backbone',
         'backboneSyphon': 'lib/backbone.syphon',
+        'backboneCache':     'lib/backbone.cache',
         'templateLoader': 'lib/templateLoader',
 
         // App
@@ -13927,6 +13928,7 @@ define( 'section-container-view',['require','underscore','jquery','backbone','se
 
             $('#load-more').remove();
             this.collection.fetch({
+                cache: true,
                 success: function(){
                     $('.loader').addClass('hidden');
 
@@ -14084,7 +14086,7 @@ define( 'post-view',['require','jquery','underscore','backbone','post-collection
             this.collection = new PostCollection([],{url:"/api/" + this.post });
             this.template = _.template(tpl.get('post'));
  
-            this.collection.fetch().complete(function(){
+            this.collection.fetch({cache:true}).complete(function(){
                 that.render();
             });
 
