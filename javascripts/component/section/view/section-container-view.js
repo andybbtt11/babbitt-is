@@ -54,7 +54,7 @@ define( function( require ) {
 
         appendUpload: function(){
             //TODO: Make template
-            this.$el.append('<li><br/><br/><h2>test-I am currently updating the blog, hold tight and it will be updated soon.<br/><br/>-ab</h2></li>');
+            this.$el.append('<li><br/><br/><h2>No content here yet. Stay tuned.<br/><br/>-ab</h2></li>');
         },
 
         appendItems: function(){

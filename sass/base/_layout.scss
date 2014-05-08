@@ -169,6 +169,21 @@ header{
 
 .comments-container{
 	margin-top: 40px;
+	li{
+		margin-bottom: 14px;
+		padding: 5px 5px;
+		margin: 0px;
+		&:nth-child(odd){
+			background-color: #eee;
+		}
+		&:last-child{
+			margin-bottom: 20px;
+		}
+	}
+	.comment-name{
+		font-weight: bold;
+		font-family: 'Open Sans', serif;
+	}
 }
 
 .sort-by{
@@ -243,7 +258,7 @@ footer{
 
 @media screen and (max-width:600px){
 	.app{
-		padding-top: 101px;
+		padding-top: 61px;
 		position: relative;
 		overflow: auto;
 	}
@@ -296,6 +311,7 @@ footer{
 		z-index: 3;
 		margin-top: -40px;
 		float: left;
+		display: none;
 		li{
 			margin: 0;
 			width: 20%;

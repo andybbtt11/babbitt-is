@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size:16px;
   color:#444;
-  background:url('../images/bg.jpg') 0 0 repeat;
+  background:url('http://images.babbitt.is/bg.jpg') 0 0 repeat;
 }
 
 a{

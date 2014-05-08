@@ -1,7 +1,3 @@
-/*! Blog - v0.0.1 - Built: 2014-03-20 12:51:17 AM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
 /*
 YUI 3.10.3 (build 2fb5187)
 Copyright 2013 Yahoo! Inc. All rights reserved.
@@ -243,6 +239,21 @@ header .logo {
 .comments-container {
   margin-top: 40px;
 }
+.comments-container li {
+  margin-bottom: 14px;
+  padding: 5px 5px;
+  margin: 0px;
+}
+.comments-container li:nth-child(odd) {
+  background-color: #eee;
+}
+.comments-container li:last-child {
+  margin-bottom: 20px;
+}
+.comments-container .comment-name {
+  font-weight: bold;
+  font-family: 'Open Sans', serif;
+}
 
 .sort-by {
   margin: 0 0 20px 0;
@@ -288,7 +299,7 @@ footer a.github {
 
 @media screen and (max-width: 600px) {
   .app {
-    padding-top: 101px;
+    padding-top: 61px;
     position: relative;
     overflow: auto;
   }
@@ -339,6 +350,7 @@ footer a.github {
     z-index: 3;
     margin-top: -40px;
     float: left;
+    display: none;
   }
   .sort-by li {
     margin: 0;
