@@ -1,7 +1,3 @@
-/*! Blog - v0.0.1 - Built: 2014-03-24 2:29:31 PM CST
-*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
-*/
-
 
 /**
  * almond 0.2.6 Copyright (c) 2011-2012, The Dojo Foundation All Rights Reserved.
@@ -14019,6 +14015,8 @@ define( 'post-model',['require','backbone'],function( require ) {
 
 	var model = Backbone.Model.extend({
 
+		url: '/api',
+
 		defaults: function() {
 			return {
 				'_id' : null,
@@ -14287,7 +14285,7 @@ define( 'upload-view',['require','jquery','underscore','backbone','post-model','
         initialize: function() {
 
             this.model = new Post();
-            this.collection = new PostCollection();
+            this.collection = new PostCollection([],{url:"/api"});
             this.template = _.template(tpl.get('upload-form'));
 
         },

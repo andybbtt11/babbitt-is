@@ -19,7 +19,7 @@ define( function( require ) {
         initialize: function() {
 
             this.model = new Post();
-            this.collection = new PostCollection();
+            this.collection = new PostCollection([],{url:"/api"});
             this.template = _.template(tpl.get('upload-form'));
 
         },
