@@ -13,7 +13,7 @@ body{
 	font-weight:300; 
 	font-size:.95em; 
 	color:#666666; 
-	background-image:url(../images/ui/bg.jpg); background-repeat:repeat; overflow-x:hidden; height:100
+	background-image:url("http://images.babbitt.is/bg.jpg"); background-repeat:repeat; overflow-x:hidden; height:100
 	overflow-x:hidden;
 }
 
