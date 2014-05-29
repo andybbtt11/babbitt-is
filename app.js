@@ -55,6 +55,10 @@ app.get('/blogging/upload', function(request, response) {
 	response.render('public/blog/upload.html');
 });
 
+app.get('/blogging/about/myself', function(request, response) {
+	response.render('public/blog/about.html');
+});
+
 // API locations
 //app.get('/api', routes.posts.all);
 app.get('/api', routes.posts.get);

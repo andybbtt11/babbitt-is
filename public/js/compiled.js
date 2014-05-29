@@ -1,3 +1,7 @@
+/*! Blog - v0.0.1 - Built: 2014-05-29 12:36:18 PM CST
+*   Copyright (c) 2014 Andy Babbitt All Rights Reserved.
+*/
+
 
 /**
  * almond 0.2.6 Copyright (c) 2011-2012, The Dojo Foundation All Rights Reserved.
